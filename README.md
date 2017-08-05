@@ -1,0 +1,1 @@
+Sends periodically RAW ICMP Echo requests which executes a callback on error

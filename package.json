@@ -1,0 +1,22 @@
+{
+  "name": "checkip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "checkip.js",
+  "scripts": {
+    "test": "node test/checkip.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://syno/git/ES/checkip"
+  },
+  "keywords": [
+    "ping",
+    "toggle"
+  ],
+  "author": "Jean-Philippe Ruijs",
+  "license": "ISC",
+  "dependencies": {
+    "net-ping": "^1.2.1"
+  }
+}
