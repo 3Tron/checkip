@@ -16,17 +16,19 @@ class CheckIP {
     var session = ping.createSession();
     setInterval(() => session.pingHost(this.targetHost, (error, targetHost) => {
       if (error) {
-        let differ = new Date().getTime() - lastErrorCall;
-        if (differ > this.recoverTime) {
+        let differ = new Date().getTime() - lastErrorCall; // recent?
+        if (differ > this.recoverTime) { // did we gave it enough time
           lastErrorCall = new Date().getTime();
           onErrorCallback();
         } else {
-          if (verbose) console.log(timestamp(), `Waiting ${(this.recoverTime - differ) / 1000} seconds`);
+          if (this.verbose) {
+            console.log(timestamp(), `Waiting ${(this.recoverTime - differ) / 1000} seconds`);
+          }
         }
       } else {
         onSuccessCallback();
       }
-    }), this.pingDelay); //will wait 1 minures
+    }), this.pingDelay);
   }
 }
 
